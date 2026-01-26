@@ -501,6 +501,22 @@
         </div>
     </section>
 
+    <!-- Lesson Schedule Section -->
+    <section class="section-padding" style="background-color: var(--white);">
+        <div class="container">
+            <div class="feature-item align-items-center" style="background: var(--gradient-red); border-radius: 20px;">
+                <div class="feature-icon" style="font-size: 3rem; color: #fff;">⏰</div>
+                <div class="ms-3">
+                    <h2 class="text-white mb-2" style="font-size: 1.5rem;">Darslar qaysi vaqtda bo’ladi?</h2>
+                    <p class="text-white mb-0" style="font-size: 1.1rem; opacity: 0.95;">
+                        Haftada 4 kun dars bo’ladi. Seshanba-Payshanba-Shanba-Yakshanba. <br>
+                        <strong>Soat 20:00-22:00 gacha</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section (Audience/Benefits) -->
     <section class="section-padding features-section">
         <div class="container">
@@ -728,15 +744,16 @@
 
     <!-- JavaScript -->
     <script>
-        // Set date field
-        document.getElementById('date').value = new Date().toISOString();
-
         const form = document.getElementById('courseForm');
         const message = document.getElementById('formMessage');
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxDxmyicp21eB9mRS-hOxsEHTDgznfpx_LaDmGihp5btM09apRFOIBDytEqPRCgtEsa/exec';
 
         form.addEventListener('submit', e => {
             e.preventDefault();
+
+            // Set date field on submission
+            document.getElementById('date').value = new Date().toISOString();
+
             const btn = form.querySelector('button');
             const originalText = btn.textContent;
 
