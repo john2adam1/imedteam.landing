@@ -1,10 +1,11 @@
 :root {
-    --primary-red: #D32F2F;
-    --primary-dark: #B71C1C;
-    --text-dark: #212121;
-    --text-light: #757575;
-    --bg-light: #F9F9F9;
-    --white: #FFFFFF;
+    --primary-red: #8B0000;
+    --primary-light: #B71C1C;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --problems-bg: #FFF5F5;
+    --text-dark: #333333;
+    --gradient-red: linear-gradient(135deg, #8B0000 0%, #B71C1C 100%);
 }
 
 * {
@@ -14,10 +15,11 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-bg);
     color: var(--text-dark);
     line-height: 1.6;
-    background-color: var(--white);
+    overflow-x: hidden;
 }
 
 .container {
@@ -27,290 +29,220 @@ body {
     padding: 0 20px;
 }
 
-.section {
-    padding: 60px 0;
-}
-
-.section-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary-red);
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-.section-description {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    color: var(--text-light);
-}
-
-/* Button */
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
+h1,
+h2,
+h3 {
     font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
 }
 
-.btn-primary {
-    background-color: var(--primary-red);
-    color: var(--white);
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+.section-padding {
+    padding: 50px 0;
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.btn-warning {
-    background-color: #FFC107;
-    color: #000;
-}
-
-.btn-block {
-    display: block;
-    width: 100%;
+.img-rounded-custom {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.6), rgba(139, 0, 0, 0.6)), url('assets/hero.jpg') center center/cover no-repeat;
     color: var(--white);
     text-align: center;
-    padding: 150px 0;
-}
-
-.hero-title {
-    font-size: 2.5rem;
-    /* Mobile first size */
-    margin-bottom: 20px;
-    font-weight: 900;
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
-}
-
-/* Problems Section */
-.problems-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.problem-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    background: var(--bg-light);
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-red);
-}
-
-.check-icon {
-    font-size: 1.2rem;
-    color: var(--primary-red);
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.problem-text p {
-    margin-top: 5px;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-/* Topics Grid */
-.topics-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.topic-card {
-    background: var(--bg-light);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.topic-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-.topic-card h3 {
-    color: var(--primary-red);
-    margin-bottom: 15px;
-}
-
-/* Audience Grid */
-.audience-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.audience-card {
-    text-align: center;
-    padding: 30px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-}
-
-.audience-card .icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-/* Teachers Grid */
-.teachers-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* 2 columns on mobile for small cards */
-    gap: 20px;
-}
-
-.teacher-card {
-    text-align: center;
-}
-
-.teacher-img {
-    width: 120px;
-    height: 120px;
-    background-color: #ddd;
-    border-radius: 50%;
-    margin: 0 auto 15px auto;
-    background-image: url('https://via.placeholder.com/150');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Form Section */
-.bg-red {
-    background-color: var(--primary-red);
-}
-
-.text-white {
-    color: var(--white) !important;
-}
-
-.contact-form {
-    max-width: 500px;
-    margin: 40px auto 0 auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.form-message {
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-/* Mobile-First Tweaks */
-.section {
-    padding: 40px 0;
-    /* Reduced from 60px for mobile */
-}
-
-.hero-section {
-    padding: 100px 0;
-    /* Reduced from 150px for mobile */
+    padding: 100px 20px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 10px 30px rgba(139, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
 }
 
 .hero-title {
     font-size: 2rem;
-    /* Reduced from 2.5rem for better mobile fit */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific background for EKG hero */
+.ekg-hero {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.4) 0%, rgba(183, 28, 28, 0.4) 100%),
+        url('assets/hero-ekg.webp') center center/cover no-repeat;
+}
+
+/* Buttons */
+.btn-custom-light {
+    background-color: var(--white);
+    color: var(--primary-red);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom-light:active {
+    transform: scale(0.95);
+}
+
+.btn-submit {
+    background-color: #FFC107;
+    color: #000;
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* General Layout Elements */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    background: var(--gradient-red);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(139, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4);
+    border-left-color: var(--white);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--white);
+    margin-right: 15px;
+    min-width: 40px;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.course-card {
+    background: var(--white);
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, #FFF5F5 0%, var(--light-bg) 100%);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary-red);
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.15);
+}
+
+/* Form Section */
+.form-section {
+    background: var(--gradient-red);
+    color: var(--white);
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding-bottom: 40px;
+    box-shadow: 0 -10px 30px rgba(139, 0, 0, 0.3);
+    position: relative;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-left: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 50px;
+    padding: 15px 25px;
+    border: none;
+    font-size: 1rem;
     margin-bottom: 15px;
 }
 
-.section-title {
-    font-size: 1.75rem;
-    /* Reduced from 2rem */
-    margin-bottom: 15px;
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
 }
 
-.form-group input {
-    font-size: 16px;
-    /* Prevents auto-zoom on iOS */
-    padding: 12px;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 
-/* Responsive - Tablet & Desktop */
-@media (min-width: 768px) {
-    .container {
-        padding: 0 40px;
-    }
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+}
 
-    .section {
-        padding: 80px 0;
-    }
+.icons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 15px;
+}
 
-    .hero-section {
-        padding: 160px 0;
-    }
-
+@media (max-width: 768px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 1.5rem;
     }
 
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .topics-grid,
-    .audience-grid,
-    .includes-grid,
-    .teachers-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 992px) {
-
-    .topics-grid,
-    .audience-grid,
-    .teachers-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .includes-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .section-padding {
+        padding: 30px 0;
     }
 }
