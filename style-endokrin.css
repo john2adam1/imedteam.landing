@@ -1,0 +1,174 @@
+/* ===============================
+   GLOBAL VARIABLES (GREEN THEME)
+================================ */
+:root {
+    --primary-green: #1B5E20;
+    /* Dark medical green */
+    --primary-light: #2E7D32;
+    /* Lighter green */
+    --accent-green: #4CAF50;
+    /* CTA green */
+    --mint-bg: #F1F8F4;
+    /* Soft background */
+    --white: #ffffff;
+    --text-dark: #263238;
+    --problems-bg: #E8F5E9;
+
+    --gradient-green: linear-gradient(135deg, #1B5E20, #4CAF50);
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero-section {
+    background: var(--gradient-green);
+    padding: 90px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    max-width: 800px;
+    margin: 20px auto 30px;
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* ===============================
+   BUTTONS (GLOBAL)
+================================ */
+.btn-custom-light,
+.btn-submit {
+    background-color: var(--accent-green);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+}
+
+.btn-custom-light:hover,
+.btn-submit:hover {
+    background-color: #43A047;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 40px;
+}
+
+/* ===============================
+   FEATURE ITEMS
+================================ */
+.feature-item {
+    display: flex;
+    gap: 20px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+.feature-title {
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.feature-text {
+    color: #455A64;
+}
+
+/* ===============================
+   COURSE CARD
+================================ */
+.course-card {
+    background: var(--mint-bg);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.course-card h3 {
+    color: var(--primary-green);
+    font-weight: 800;
+    margin-top: 30px;
+}
+
+/* ===============================
+   LIST GROUP
+================================ */
+.list-group-item {
+    background: transparent;
+    border: none;
+    padding-left: 0;
+    color: #37474F;
+}
+
+/* ===============================
+   TESTIMONIAL
+================================ */
+.testimonial-card {
+    background: var(--mint-bg);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+/* ===============================
+   FORM SECTION
+================================ */
+.form-section {
+    background: var(--gradient-green);
+}
+
+.form-control {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.4);
+}
+
+/* ===============================
+   SMALL SCREENS
+================================ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .feature-item {
+        flex-direction: column;
+    }
+}
