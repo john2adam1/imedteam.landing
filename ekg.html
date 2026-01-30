@@ -369,7 +369,86 @@
         </div>
     </section>
 
-    <script src="main.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbykVnp9JMRkYW7d7w8bQetlTCa6Gkx4BnS2g_kRXDfjRb34yxM0EhjIJBYht8XaHZYuHw/exec';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('courseForm');
+            const message = document.getElementById('formMessage');
+            if (!form) return;
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn ? btn.textContent : 'YUBORISH';
+
+                const name = (form.querySelector('#name')?.value || '').trim();
+                const group = (form.querySelector('#group')?.value || '').trim();
+                const numberRaw = (form.querySelector('#phone')?.value || '').trim();
+
+                if (!name || !group || !numberRaw) {
+                    alert("Iltimos barcha maydonlarni to'ldiring");
+                    return;
+                }
+
+                const number = numberRaw.replace(/\s/g, '');
+                if (!/^\+998\d{9}$/.test(number)) {
+                    alert("Telefon raqam +998 bilan bo'lsin. Masalan: +998901234567");
+                    return;
+                }
+
+                if (btn) { btn.disabled = true; btn.textContent = "YUBORILMOQDA..."; }
+                if (message) { message.textContent = ""; message.style.color = "white"; }
+
+                const data = new URLSearchParams();
+                data.append('name', name);
+                data.append('group', group);
+                data.append('number', number);
+                data.append('page', 'EKG');
+
+                try {
+                    await fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: data
+                    });
+
+                    // Success - Google Apps Script doesn't return readable response with no-cors
+                    if (message) { message.textContent = "Muvaffaqiyatli yuborildi! ✅"; }
+                    form.reset();
+
+                    if (btn) {
+                        btn.textContent = "YUBORILDI";
+                        setTimeout(() => {
+                            btn.disabled = false;
+                            btn.textContent = originalText;
+                            if (message) message.textContent = "";
+                        }, 2500);
+                    }
+                } catch (err) {
+                    console.error(err);
+                    if (message) {
+                        message.textContent = "Xatolik: Qayta urinib ko'ring";
+                        message.style.color = "#ffcccc";
+                    }
+                    if (btn) { btn.disabled = false; btn.textContent = originalText; }
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

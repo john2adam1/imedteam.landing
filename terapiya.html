@@ -399,20 +399,86 @@
                     <input type="text" class="form-control" id="name" name="name" required
                         placeholder="Ismingizni kiriting">
                 </div>
+
                 <div class="mb-3">
                     <label for="phone" class="form-label text-white">Telefon Raqam</label>
                     <input type="tel" class="form-control" id="phone" name="number" required
                         placeholder="+998 90 123 45 67">
                 </div>
-                <input type="hidden" name="page" value="Intensiv terapiya">
 
                 <button type="submit" class="btn-submit">YUBORISH</button>
             </form>
+
             <div id="formMessage" class="mt-4 text-center fw-bold text-white"></div>
         </div>
     </section>
 
-    <script src="main.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwthjYQXw-wPcDtfTK47NHe3GBHz-8SzDQcVVyNQ8X5lYwmp73DCmomKSbS5n1dxQ71/exec';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('courseForm');
+            const message = document.getElementById('formMessage');
+            if (!form) return;
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn ? btn.textContent : 'YUBORISH';
+
+                const name = (form.querySelector('#name')?.value || '').trim();
+                const numberRaw = (form.querySelector('#phone')?.value || '').trim();
+                if (!name || !numberRaw) {
+                    alert("Iltimos ism va telefon raqamni to'ldiring");
+                    return;
+                }
+
+                const number = numberRaw.replace(/\s/g, '');
+                if (!/^\+998\d{9}$/.test(number)) {
+                    alert("Telefon raqam +998 bilan bo‘lsin. Masalan: +998901234567");
+                    return;
+                }
+
+                if (btn) { btn.disabled = true; btn.textContent = "YUBORILMOQDA..."; }
+                if (message) { message.textContent = ""; message.style.color = "white"; }
+
+                const data = new URLSearchParams();
+                data.append('name', name);
+                data.append('number', number);
+
+                try {
+                    await fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: data
+                    });
+
+                    // Success - Google Apps Script doesn't return readable response with no-cors
+                    if (message) { message.textContent = "Muvaffaqiyatli yuborildi! ✅"; }
+                    form.reset();
+
+                    if (btn) {
+                        btn.textContent = "YUBORILDI";
+                        setTimeout(() => {
+                            btn.disabled = false;
+                            btn.textContent = originalText;
+                            if (message) message.textContent = "";
+                        }, 2500);
+                    }
+                } catch (err) {
+                    console.error(err);
+                    if (message) {
+                        message.textContent = "Xatolik: Qayta urinib ko'ring";
+                        message.style.color = "#ffcccc";
+                    }
+                    if (btn) { btn.disabled = false; btn.textContent = originalText; }
+                }
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
