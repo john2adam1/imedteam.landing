@@ -402,9 +402,10 @@
 
                 <div class="mb-3">
                     <label for="phone" class="form-label text-white">Telefon Raqam</label>
-                    <input type="tel" class="form-control" id="phone" name="number" required
+                    <input type="tel" class="form-control" id="phone" name="phone" required
                         placeholder="+998 90 123 45 67">
                 </div>
+                <input type="hidden" name="page" value="Terapiya">
 
                 <button type="submit" class="btn-submit">YUBORISH</button>
             </form>
@@ -414,7 +415,7 @@
     </section>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwthjYQXw-wPcDtfTK47NHe3GBHz-8SzDQcVVyNQ8X5lYwmp73DCmomKSbS5n1dxQ71/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwP-SKx43wfITFSWNgaCMx2Rn1xuQMq_xcO0MHOuPdSWDoFuWdKaTaqXI_FC_oAcyve/exec';
 
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('courseForm');
@@ -445,7 +446,8 @@
 
                 const data = new URLSearchParams();
                 data.append('name', name);
-                data.append('number', number);
+                data.append('phone', number);
+                data.append('page', 'Terapiya');
 
                 try {
                     await fetch(scriptURL, {

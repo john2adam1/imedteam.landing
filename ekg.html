@@ -358,7 +358,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label text-white">Telefon Raqam</label>
-                    <input type="tel" class="form-control" id="phone" name="number" required
+                    <input type="tel" class="form-control" id="phone" name="phone" required
                         placeholder="+998 90 123 45 67">
                 </div>
                 <input type="hidden" name="page" value="EKG">
@@ -370,7 +370,7 @@
     </section>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbykVnp9JMRkYW7d7w8bQetlTCa6Gkx4BnS2g_kRXDfjRb34yxM0EhjIJBYht8XaHZYuHw/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwP-SKx43wfITFSWNgaCMx2Rn1xuQMq_xcO0MHOuPdSWDoFuWdKaTaqXI_FC_oAcyve/exec';
 
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('courseForm');
@@ -404,7 +404,7 @@
                 const data = new URLSearchParams();
                 data.append('name', name);
                 data.append('group', group);
-                data.append('number', number);
+                data.append('phone', number);
                 data.append('page', 'EKG');
 
                 try {
