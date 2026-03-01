@@ -1,0 +1,248 @@
+:root {
+    --primary-red: #8B0000;
+    --primary-light: #B71C1C;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --problems-bg: #FFF5F5;
+    --text-dark: #333333;
+    --gradient-red: linear-gradient(135deg, #8B0000 0%, #B71C1C 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+.section-padding {
+    padding: 50px 0;
+}
+
+.img-rounded-custom {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.6), rgba(139, 0, 0, 0.6)), url('assets/hero.jpg') center center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 10px 30px rgba(139, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.hero-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific background for EKG hero */
+.ekg-hero {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.4) 0%, rgba(183, 28, 28, 0.4) 100%),
+        url('assets/hero-ekg.webp') center center/cover no-repeat;
+}
+
+/* Buttons */
+.btn-custom-light {
+    background-color: var(--white);
+    color: var(--primary-red);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom-light:active {
+    transform: scale(0.95);
+}
+
+.btn-submit {
+    background-color: #FFC107;
+    color: #000;
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* General Layout Elements */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    background: var(--gradient-red);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(139, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4);
+    border-left-color: var(--white);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--white);
+    margin-right: 15px;
+    min-width: 40px;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.course-card {
+    background: var(--white);
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, #FFF5F5 0%, var(--light-bg) 100%);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary-red);
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.15);
+}
+
+/* Form Section */
+.form-section {
+    background: var(--gradient-red);
+    color: var(--white);
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding-bottom: 40px;
+    box-shadow: 0 -10px 30px rgba(139, 0, 0, 0.3);
+    position: relative;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-left: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 50px;
+    padding: 15px 25px;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+}
+
+.icons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .section-padding {
+        padding: 30px 0;
+    }
+}
