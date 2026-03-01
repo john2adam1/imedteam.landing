@@ -208,35 +208,34 @@
                     oling:</p>
 
                 <!-- App download buttons -->
-                <div class="mt-8 flex flex-col gap-4">
-
-                    <!-- Android -->
-                    <div
-                        class="flex items-center gap-4 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition shadow-sm">
-                        <a href="/assets/app-release.apk" download class="flex-shrink-0">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                                alt="Get it on Google Play" class="h-12">
-                        </a>
-                        <div>
-                            <div class="text-gray-700 font-semibold text-base">Android uchun yuklab olish</div>
-                            <div class="text-sm text-gray-500">iMed Team ilovasining so‘nggi versiyasi</div>
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="https://apps.apple.com/uz/app/imed-team/id6745555493" target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto group relative px-7 py-4 bg-slate-950 text-white rounded-2xl font-bold flex items-center justify-center sm:justify-start gap-4 hover:bg-slate-900 transition-all duration-300 shadow-xl hover:shadow-slate-950/40 active:scale-95 border border-white/5 overflow-hidden">
+                        <div
+                            className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                         </div>
-                    </div>
-
-                    <!-- iOS -->
-                    <div
-                        class="flex items-center gap-4 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition shadow-sm">
-                        <a href="https://apps.apple.com/uz/app/imed-team/id6745555493" target="_blank" rel="noopener"
-                            class="flex-shrink-0">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                                alt="Download on the App Store" class="h-12">
-                        </a>
-                        <div>
-                            <div class="text-gray-700 font-semibold text-base">iOS uchun yuklab olish</div>
-                            <div class="text-sm text-gray-500">iPhone va iPad foydalanuvchilari uchun</div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="iOS"
+                            className="w-7 h-7 brightness-0 invert" />
+                        <div className="flex flex-col items-start leading-none text-left relative z-10">
+                            <span className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Download on</span>
+                            <span className="text-lg font-extrabold tracking-tight">App Store</span>
                         </div>
-                    </div>
+                    </a>
 
+                    <a href="https://minio.imedteam.uz/imed/imedteam_3.0.0_17.apk" target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto group relative px-7 py-4 bg-slate-950 text-white rounded-2xl font-bold flex items-center justify-center sm:justify-start gap-4 hover:bg-slate-900 transition-all duration-300 shadow-xl hover:shadow-slate-950/40 active:scale-95 border border-white/5 overflow-hidden">
+                        <div
+                            className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <img src="https://www.vectorlogo.zone/logos/android/android-icon.svg" alt="Android"
+                            className="w-7 h-7" />
+                        <div className="flex flex-col items-start leading-none text-left relative z-10">
+                            <span className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Yuklab olish</span>
+                            <span className="text-lg font-extrabold tracking-tight">Android</span>
+                        </div>
+                    </a>
                 </div>
 
 
