@@ -8,6 +8,7 @@
     <meta name="description" content="imedteam.uz">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/imedteamlogo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -141,28 +142,39 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             animation: shimmer 3s infinite;
         }
+
+        .logo-container {
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .team-photo-container {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .team-photo-container:hover {
+            border-color: #f43f5e;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.2);
+        }
     </style>
 </head>
 
 <body class="bg-primary-50 text-slate-900">
-    <!-- Top bar -->
-    <div class="w-full bg-primary-50 text-primary-700 text-sm">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-            <span class="font-medium">📣 Yangi oqim uchun ro‘yxat davom etmoqda!</span>
-            <a href="#contact" class="font-semibold link-underline">Aloqa</a>
-        </div>
-    </div>
-
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4">
             <div class="h-16 flex items-center justify-between">
                 <a href="#home" class="flex items-center gap-2 group">
 
-                    <div class="flex items-center gap-2 transform scale-110">
-                        <div class="w-11 h-11 rounded-lg bg-transparent grid place-items-center">
-                            <img src="public/imedteamlogo.png" alt="Logo"
-                                class="w-full h-full object-contain rounded-lg" />
+                    <div class="flex items-center gap-2 transform scale-110 logo-container">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-white shadow-soft grid place-items-center border border-slate-100">
+                            <img src="assets/imedteamlogo.png" alt="Logo" class="w-9 h-9 object-contain" />
                         </div>
 
                         <div class="leading-tight">
@@ -268,6 +280,31 @@
                 <!-- Highlight card removed -->
                 <div class="hidden"></div>
             </div>
+
+            <!-- Hero Image -->
+            <div class="reveal relative lg:block">
+                <div class="relative rounded-3xl overflow-hidden shadow-card border-8 border-white/50 bg-white">
+                    <img src="assets/masterklass.jpg" alt="iMed Masterclass"
+                        class="w-full h-auto object-cover transform hover:scale-105 transition duration-700" />
+
+                    <!-- Decorative elements -->
+                    <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-500/10 rounded-full blur-2xl"></div>
+                    <div class="absolute -top-4 -right-4 w-32 h-32 bg-primary-500/10 rounded-full blur-2xl"></div>
+                </div>
+
+                <!-- Floating badge (optional, adds premium feel) -->
+                <div
+                    class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3 animate-bounce">
+                    <div class="w-10 h-10 rounded-full bg-primary-50 grid place-items-center">
+                        <span class="text-xl">🎓</span>
+                    </div>
+                    <div class="leading-tight">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Premium</div>
+                        <div class="text-sm font-extrabold text-slate-900">Masterklass</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Partners -->
@@ -277,60 +314,60 @@
                 <div class="marquee-track">
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">Reklamangiz uchun joy</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
-                        <span class="font-semibold text-base">iMed Team</span>
-                    </div>
-
-                    <div
-                        class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-semibold text-base">iMed Team</span>
+                    </div>
+
+                    <div
+                        class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">Reklamangiz uchun joy</span>
                     </div>
 
                     <div
                         class="flex items-center gap-3 px-5 py-3 rounded-lg border border-slate-100 bg-white shadow-sm min-w-[180px]">
-                        <img src="public/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
+                        <img src="assets/imedteamlogo.png" alt="Logo" class="w-8 h-8 object-contain" />
                         <span class="font-semibold text-base">iMed Team</span>
                     </div>
 
@@ -513,8 +550,9 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/himmatulloh.JPG" alt="iMed Team Logo" class="w-full h-full object-cover" />
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/himmatulloh.JPG" alt="Himmatulloh Rahmatov"
+                            class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Himmatulloh Rahmatov</div>
                     <div class="text-sm text-slate-500">Asoschi</div>
@@ -525,8 +563,9 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/ulugbekmahmudov.jpg" alt="iMed Team Logo" class="w-full h-full object-cover" />
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/ulugbekmahmudov.jpg" alt="Ulug’bek Mahmudov"
+                            class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Ulug’bek Mahmudov.</div>
                     <div class="text-sm text-slate-500">Ma'ruzachi</div>
@@ -538,8 +577,8 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/bekjonsattarov.jpg" alt="iMed Team Logo" class="w-full h-full object-cover" />
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/bekjonsattarov.jpg" alt="Bekjon Sattarov" class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Bekjon Sattarov .</div>
                     <div class="text-sm text-slate-500">Ma'ruzachi</div>
@@ -551,8 +590,8 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/mirzahamidmirzapolatov.jpg" alt="iMed Team Logo"
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/mirzahamidmirzapolatov.jpg" alt="Mirzahamid Mirzalatipov"
                             class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Mirzahamid Mirzalatipov.</div>
@@ -563,8 +602,8 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/doniyoryakubov.jpg" alt="iMed Team Logo" class="w-full h-full object-cover" />
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/doniyoryakubov.jpg" alt="Doniyor Yakubov" class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Doniyor Yakubov.</div>
                     <div class="text-sm text-slate-500">Ma'ruzachi</div>
@@ -574,8 +613,8 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/rasuljonxolmatov.jpg" alt="iMed Team Logo"
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/rasuljonxolmatov.jpg" alt="Rasuljon Xolmatov"
                             class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Rasuljon Xolmatov .</div>
@@ -588,8 +627,9 @@
 
                 <div class="reveal rounded-2xl border border-slate-100 bg-white p-6 shadow-soft text-center">
                     <div
-                        class="mx-auto w-20 h-20 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden">
-                        <img src="assets/zohidjon.jpg" alt="iMed Team Logo" class="w-full h-full object-cover" />
+                        class="mx-auto w-24 h-24 rounded-full bg-white grid place-items-center shadow-sm overflow-hidden team-photo-container">
+                        <img src="assets/zohidjon.jpg" alt="Zohidjon Zaylobiddinov"
+                            class="w-full h-full object-cover" />
                     </div>
                     <div class="mt-4 font-extrabold">Zohidjon Zaylobiddinov.</div>
                     <div class="text-sm text-slate-500">IT mutahasisi</div>
@@ -717,8 +757,9 @@
     <footer class="border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-11 h-11 rounded-lg bg-transparent grid place-items-center">
-                    <img src="public/imedteamlogo.png" alt="Logo" class="w-full h-full object-contain rounded-lg" />
+                <div
+                    class="w-11 h-11 rounded-xl bg-white shadow-soft grid place-items-center border border-slate-100 logo-container">
+                    <img src="assets/imedteamlogo.png" alt="Logo" class="w-9 h-9 object-contain" />
                 </div>
                 <div class="font-extrabold">iMed Team</div>
             </div>
